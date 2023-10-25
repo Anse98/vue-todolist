@@ -14,7 +14,7 @@
 
 
       <div class="add-task">
-        <input type="text" placeholder="Nuova Task" v-model="taskValue">
+        <input type="text" placeholder="Nuova Task" v-model="taskValue" @keyup.enter="addTask()">
         <button @click="addTask()">Aggiungi</button>
         <small>Devi inserire almeno 5 caratteri</small>
       </div>
