@@ -1,39 +1,54 @@
 const { createApp } = Vue;
 
-  createApp({
-    data() {
-      return {
-        todos: [
-          {
-            text: 'Fare i compiti',
-            done: false
-          },
+createApp({
 
-          {
-            text: 'Fare la spesa',
-            done: true
-          },
+  ///////////////////////////////DATA////////////////////////
+  data() {
+    return {
+      todos: [
+        {
+          text: 'Fare i compiti',
+          done: false
+        },
 
-          {
-            text: 'Fare il bucato',
-            done: false
-          },
+        {
+          text: 'Fare la spesa',
+          done: true
+        },
 
-          {
-            text: 'Stendere i vestiti',
-            done: true
-          },
-        ]
-      }
-    },
+        {
+          text: 'Fare il bucato',
+          done: false
+        },
 
-    methods: {
-      removeTask(task){
-        this.todos.splice(task,1);
-      }
-    },
+        {
+          text: 'Stendere i vestiti',
+          done: true
+        },
+      ],
 
-    mounted() {
-      
+      taskValue:'',
+     
     }
-  }).mount('#app')
+  },
+
+///////////////////////////////////////METHODS///////////////////////////////
+  methods: {
+    removeTask(task) {
+      this.todos.splice(task, 1);
+    },
+
+    addTask() {
+      const todo = {
+        text: this.taskValue,
+        done: false,
+      }
+      this.todos.unshift(todo); 
+      this.taskValue = '';
+    }
+  },
+/////////////////////////////////////////MOUNTED///////////////////////////////
+  mounted() {
+
+  }
+}).mount('#app')
