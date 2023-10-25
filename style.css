@@ -5,6 +5,10 @@
   text-decoration: line-through;
 }
 
-li i{
+li i,
+li p{
   cursor: pointer;
 }
+
+
+

@@ -23,8 +23,10 @@
       <div class="tasks-container">
         <ul>
           <li v-for="(todo, index) in todos" :key="index" :class="{ done: todos[index].done}">
-            {{todos[index].text}}
-            <i class="fas fa-times" @click="removeTask(index)"></i>
+            <p @click="invertDone(index)">
+              {{todos[index].text}}
+              <i class="fas fa-times" @click="removeTask(index)"></i>
+            </p>
           </li>
         </ul>
         <h2 v-if="todos.length === 0">Non ci sono task</h2>

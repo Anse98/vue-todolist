@@ -45,6 +45,14 @@ createApp({
       }
       this.todos.unshift(todo); 
       this.taskValue = '';
+    },
+
+    invertDone(index){
+      if(this.todos[index].done === true) {
+        this.todos[index].done = false;
+      } else {
+        this.todos[index].done= true;
+      }
     }
   },
 /////////////////////////////////////////MOUNTED///////////////////////////////
