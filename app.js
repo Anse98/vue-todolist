@@ -27,7 +27,9 @@ createApp({
         },
       ],
 
-      taskValue:'',
+      taskValue: '',
+
+      error: false,
      
     }
   },
@@ -39,11 +41,18 @@ createApp({
     },
 
     addTask() {
-      const todo = {
-        text: this.taskValue,
-        done: false,
+
+      if(this.taskValue.length < 5){
+        this.error = true;
+      } else {
+        const todo = {
+          text: this.taskValue,
+          done: false,
+        }
+        this.todos.unshift(todo);
+        this.error = false;
       }
-      this.todos.unshift(todo); 
+      
       this.taskValue = '';
     },
 
@@ -57,6 +66,6 @@ createApp({
   },
 /////////////////////////////////////////MOUNTED///////////////////////////////
   mounted() {
-
+   
   }
 }).mount('#app')

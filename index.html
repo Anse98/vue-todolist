@@ -14,22 +14,30 @@
 
 
       <div class="add-task">
-        <input type="text" placeholder="Nuova Task" v-model="taskValue" @keyup.enter="addTask()">
-        <button @click="addTask()">Aggiungi</button>
-        <small>Devi inserire almeno 5 caratteri</small>
+        <h1>Aggiungi alla lista qualcosa che devi fare! <i class="fa-solid fa-wand-magic-sparkles"></i></h1>
+        <div class="new-task">
+          <input type="text" placeholder="Nuova Task" v-model="taskValue" @keyup.enter="addTask()">
+          <button @click="addTask()"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <small :class="{visible: error}" class="hidden"> Devi inserire almeno 5 caratteri </small>
       </div>
 
 
       <div class="tasks-container">
         <ul>
           <li v-for="(todo, index) in todos" :key="index" :class="{ done: todos[index].done}">
-            <p @click="invertDone(index)">
               {{todos[index].text}}
-              <i class="fas fa-times" @click="removeTask(index)"></i>
-            </p>
+              <div class="icons">
+                <div class="check">
+                  <i class="fa-solid fa-circle-check" @click="invertDone(index)"></i>
+                </div>
+                <div class="trash">
+                  <i class="fa-solid fa-trash-can" @click.stop="removeTask(index) "></i> 
+                </div>
+              </div>  
           </li>
         </ul>
-        <h2 v-if="todos.length === 0">Non ci sono task</h2>
+        <h2 v-if="todos.length === 0">Non ci sono cose da fare <i class="fa-solid fa-handshake"></i></h2>
       </div>
     </section>
   </div>

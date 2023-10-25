@@ -1,13 +1,93 @@
 
 
+body {
+  font-family:Verdana, Tahoma, sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+.add-task input {
+  padding: 16px;
+  border:solid 1px lightgray;
+  border-radius: 5px;
+}
+
+.add-task button {
+  cursor: pointer;
+  color: #087908;
+  font-size: 30px;
+  padding: 4px 10px;
+}
+
+
+.add-task {
+  text-align: center;
+}
+
+.add-task {
+  color:#087908
+}
+
+.new-task{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.tasks-container{
+  display: flex;
+  justify-content: center;
+}
 
 .done {
   text-decoration: line-through;
 }
 
+.icons {
+  display: flex;
+  gap: 16px;
+  font-size: 20px;
+  padding-bottom: 6px;
+}
+
+ul {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tasks-container ul li {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+li .trash{
+  color: tomato;
+}
+
+li .check{
+  color:#087908;
+}
+
 li i,
 li p{
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
+  color: tomato;
+  padding-top: 10px;
+}
+
+.hidden.visible {
+  display: block;
 }
 
 
