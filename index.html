@@ -24,7 +24,7 @@
         <ul>
           <li v-for="(todo, index) in todos" :key="index" :class="{ done: todos[index].done}">
             {{todos[index].text}}
-            <i class="fas fa-times"></i>
+            <i class="fas fa-times" @click="removeTask(index)"></i>
           </li>
         </ul>
         <h2>Non ci sono task</h2>
