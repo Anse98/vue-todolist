@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue To Do List</title>
+  <script src="https://kit.fontawesome.com/f1f0c66429.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app">
+    <section>
+
+
+      <div class="add-task">
+        <input type="text" placeholder="Nuova Task">
+        <button>Aggiungi</button>
+        <small>Devi inserire almeno 5 caratteri</small>
+      </div>
+
+
+      <div class="tasks-container">
+        <ul>
+          <li v-for="(todo, index) in todos" :key="index" :class="{ done: todos[index].done}">
+            {{todos[index].text}}
+            <i class="fas fa-times"></i>
+          </li>
+        </ul>
+        <h2>Non ci sono task</h2>
+      </div>
+    </section>
+  </div>
+  
+  <script src="./app.js"></script>
+</body>
+</html>
